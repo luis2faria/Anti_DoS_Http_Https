@@ -39,6 +39,6 @@ for($i=0;$i<count($low_ip);$i++){
 
 $_SESSION['last_session_request'] = time();
 
-include($content_page);
+include_once($content_page);
 exit;
 ?>
