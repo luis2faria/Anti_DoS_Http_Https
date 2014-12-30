@@ -6,6 +6,7 @@
  * Skype: pvtluyz
  */
 error_reporting( 0 );
+date_default_timezone_set('Brazil/East');
 $ip = $_SERVER['REMOTE_ADDR'];
 $error_page = 'error_page.php';
 $content_page = 'content_page.php';
@@ -27,6 +28,10 @@ if ( $_SESSION['last_session_request'] > ( time() - 2 ) ) {
 	} elseif ( $_SESSION['last_request_count'] < 5 ) {
 		$_SESSION['last_request_count'] = $_SESSION['last_request_count'] + 1;
 	} elseif ( $_SESSION['last_request_count'] >= 5 ) {
+		$fp = fopen('log_error.txt', 'a+');
+		fwrite($fp, 'IP: '.$ip.' '.date('\D\i\a\:\ Y-m-d \H\o\r\a\: H:i:s').'
+');
+		fclose($fp);
 		include_once( $error_page );
 		exit;
 	}
