@@ -37,7 +37,7 @@ if ( $_SESSION['last_session_request'] > ( time() - 2 ) ) {
 	} elseif ( $_SESSION['last_request_count'] >= 5 ) {
 		$fp = fopen('log_error.txt', 'a+');
 		fwrite( $fp, sprintf( 'IP: %s %s%s', $ip, date( '\D\i\a\:\ Y-m-d \H\o\r\a\: H:i:s' ), "\r\n" ) );
-		fclose($fp);
+		fclose( $fp );
 		include_once( $error_page );
 		exit;
 	}
