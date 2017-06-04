@@ -1,8 +1,6 @@
 <?php
 /*
  * Made by Luyz
- * Facebook: https://www.facebook.com/pvtluis
- * Twitter: https://twitter.com/luis2faria
  * Skype: pvtluyz
  */
 error_reporting( 0 );
